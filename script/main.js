@@ -49,7 +49,11 @@ function handleDrop(e) {
 
 	// this line is going to move the dragged piece from the left side of the board
 	// into whatever drop zone we choose. appendChild means "add element to the container"
-
+	console.log((this.querySelectorAll('img')))
+	if((this.querySelectorAll('img').length)){
+		alert('cannot overlap')
+	}
+	else{ this.appendChild(draggedPiece);}
 	
 }
 // step 2
