@@ -25,7 +25,12 @@ function changeBGImage() {
 	// and updating the background-image style of the puzzle board element.
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
-
+	let imgs = puzzleBoard.querySelectorAll('img')
+	console.log(document.querySelector('.puzzle-pieces'),imgs)
+	for (let i=0; i<imgs.length; i++) {
+		document.querySelector('.puzzle-pieces').appendChild(imgs[i])
+	}
+	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
 
 function handleStartDrag() { 
@@ -49,7 +54,11 @@ function handleDrop(e) {
 
 	// this line is going to move the dragged piece from the left side of the board
 	// into whatever drop zone we choose. appendChild means "add element to the container"
-
+	console.log((this.querySelectorAll('img')))
+	if((this.querySelectorAll('img').length)){
+		alert('cannot overlap')
+	}
+	else{ this.appendChild(draggedPiece);}
 	
 }
 // step 2
